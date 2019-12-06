@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing cis 101_104_105_107_109."
-                pytest /var/lib/jenkins/workspace/scriptjob/functions/cis_benchmark_101_104_105_107_109_test.py
+                pytest --version
             }
         }
         stage('Deploy') {
