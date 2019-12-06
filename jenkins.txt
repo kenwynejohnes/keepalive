@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building ${env.BUILD_ID} on ${env.JENKINS_URL}."
+                sh "pwd"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing cis 101_104_105_107_109."
+                pytest /var/lib/jenkins/workspace/scriptjob/functions/cis_benchmark_101_104_105_107_109_test.py
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying ${env.BUILD_ID} on ${env.JENKINS_URL}."
+            }
+        }
+    }
+}
