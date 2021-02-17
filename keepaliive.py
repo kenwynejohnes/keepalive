@@ -7,7 +7,7 @@ def report():
 
 
 while True:
-    r = requests.get('https://www.kcell.kz/', verify='./kcellkz.pem')
+    r = requests.get('some_URL', verify='./certificate.pem')
     print(r.status_code)
     if r.status_code == 200:
         # now = datetime.datetime.now()
